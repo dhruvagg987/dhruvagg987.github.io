@@ -1,0 +1,19 @@
+body,html, canvas{width:100%;height:100%;padding:0;margin:0;overflow: hidden;cursor:pointer;}
+		h1{
+			color: #61888C;
+			font-size: 2em;
+			font-weight: 100;
+			font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+			position: absolute;
+			letter-spacing: -0.04em;
+			left: 0;
+			bottom:2%;
+			width:100%;
+			text-align: center;
+			pointer-events: none;
+		}
+		div{
+			position: fixed;
+			top:1rem;
+			background: rgba(17, 17, 17, 0.527);
+		}

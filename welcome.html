@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Deep cat</title>
+  <link rel="stylesheet" href="./wstyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<canvas id="map"></canvas>
+
+<div style="top:77%;
+display:flex;
+justify-content:center;
+align-items:center;
+width:76%">
+  <form id="form" action="index.html" method="GET">
+    <input type="text" id="user" name="user" placeholder=" Whom To Hunt Today ? "    
+    style="position: fixed;
+    background: rgba(49, 48, 48, 0.562);
+    border-radius: 1rem;
+    text-align:center;
+    font-weight: 100;
+    color: #61888C;
+    height:1.5rem;
+    width:16rem;">
+    
+  </form>
+</div>
+
+<h1>Drag and drop to  play with our Cat :)</h1>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.min.js'></script><script  src="./wscript.js"></script>
+<script>
+  $("#form").submit(function(){
+    var name=document.getElementById("user").value;
+    window.location.href="index.html?name="+name;
+  });
+</script>
+</body>
+</html>
