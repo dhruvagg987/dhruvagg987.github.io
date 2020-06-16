@@ -84,8 +84,8 @@
 
   <div class="container" id="noob" style="max-width:1915px;">
 	  <div class="row">
-		  <div class="col-md-12 col-lg-9">
-			<div class="container fluid">
+		  <div class="col-md-12 col-lg-9" id="one">
+			<div class="container">
 				<div class="row">
 					<div class="col-sm-10 col-md-6">
 						
@@ -94,7 +94,7 @@
 								<div class="avatardiv"><img id="himg" src="download.jpg"></div>
 							  <div class="card" style="top:6rem;position:relative;text-align:center;">
 								<!-- <div style="width:0%;text-align:center;"><div class="avatardiv"></div></div> -->
-								<div class="card-image " style="height:20rem;background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,32,0.7970938717283788) 24%, rgba(0,212,255,1) 100%);">
+								<div class="card-image " style="height:20rem;background: linear-gradient(90deg, rgb(36, 2, 0) 0%, rgba(121,9,32,0.7970938717283788) 24%, rgba(27, 61, 212, 0.753) 100%);">
 								  <div class="align-items-center d-flex justify-content-center"style="width:100%;"><span id="hname" class="card-title align-items-center d-flex justify-content-center"style="top:3.5rem;left:28%;">User Name</span></div>
 								  <div class="row" style="height: 2rem;text-align:center;padding-left:3.5rem;padding-top:16.35rem;padding-bottom:1rem;">
 									<div class="col-5" style="display: flex;padding-bottom:0.5rem;"><img src="loc.png" title="Location" style="height: 3.5rem;width:auto;padding-top:0rem;padding-right:0.5rem;"> <span id="hloc" style="color:blanchedalmond;top:-2rem;display:inline;padding-top:1rem;"> Location</span></div>
@@ -162,8 +162,8 @@
 			    </div>
 				
 				<div class="row">
-					<div class="container">
-						<div class="card" style="top:7rem;width:90%">
+					<div class="container" style="width: 100%;">
+						<div class="card" style="top:7rem;width:100%;display:inline-block;height:auto;">
 							<div class="card-content">
 							  <div class="container" style="display: flex;justify-content:space-between;">
 								<div>
@@ -192,7 +192,7 @@
 
 			</div>
 		</div>
-		<div class="col-md-12 col-lg-3 card" style="top:6rem;height:94rem;">
+		<div id="two" class="col-md-12 col-lg-3 card" style="top:6rem;">
 			<h2 class="card-title" style="padding-top: 1.5rem;padding-bottom:0rem;">Repositories</h2>
 			<hr style="margin-top: 0.3rem;">
 			<div class="container" id="repos" style="
@@ -237,6 +237,12 @@
 		}
 	  });
 
+
+	  
+let hm = $("#one").innerHeight();
+hm = parseInt(hm) + 370;
+document.getElementById("two").style.maxHeight =hm+"px";
+
 const noobi = document.getElementById("noob");
 
 const queryString=window.location.search;
@@ -276,8 +282,8 @@ async function party(){
 	document.getElementById("hnrepo").innerHTML=user.public_repos;
 	document.getElementById("himg").setAttribute("src",user.avatar_url);
 	document.getElementById("hlink").setAttribute("href",user.html_url);
-	document.getElementById("hfrlink").setAttribute("href",user.followers_url);
-	document.getElementById("hfllink").setAttribute("href",user.following_url);
+	document.getElementById("hfrlink").setAttribute("href",user.html_url);
+	document.getElementById("hfllink").setAttribute("href",user.html_url);
 	
 	y3=[user.followers,user.following,user.public_repos];
 	response2=await fetch(url2);
